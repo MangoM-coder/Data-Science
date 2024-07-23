@@ -1,0 +1,20 @@
+import math
+
+# input from user 
+a = int(input("Enter the number : "))
+
+maxPrime = 0
+# converting the number to odd
+while a % 2 == 0:
+	maxPrime = 2
+	a = a/2	
+
+# prime factors and replacing maxPrimeFactor
+for i in range(3, int(math.sqrt(a)) + 1, 2):
+	while a % i == 0:
+		maxPrime = i
+		a = a / i
+if a > 2:
+	maxPrime = a
+		
+print("The largest prime Factor of number is ",int(maxPrime))
